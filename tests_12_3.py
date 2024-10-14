@@ -1,12 +1,11 @@
 import unittest
-import unittest as ut
 from checking_classes import Tournament, Runner
 
 
 note = 'Тесты в этом кейсе заморожены'
 
 
-class RunnerTest(ut.TestCase):
+class RunnerTest(unittest.TestCase):
     is_frozen = False
 
     @unittest.skipIf(is_frozen, note)
@@ -33,7 +32,7 @@ class RunnerTest(ut.TestCase):
          self.assertNotEqual(el_run.distance, el_walk.distance)
 
 
-class TournamentTest(ut.TestCase): #создаем класс для тестирования
+class TournamentTest(unittest.TestCase): #создаем класс для тестирования
     is_frozen = True
 
     @classmethod #добавляем через данный метод атрибут класса
@@ -79,4 +78,4 @@ class TournamentTest(ut.TestCase): #создаем класс для тести�
         cls.assertTrue({3: 'Ник'} == {key_max: val_last})
 
 if __name__ == '__main__':
-    ut.main()
+    unittest.main()
